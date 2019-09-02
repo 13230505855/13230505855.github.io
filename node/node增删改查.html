@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>node 增删改查 | 杨峥的个人博客</title>
+    <meta name="description" content="欢迎光临">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.63332151.css" as="style"><link rel="preload" href="/assets/js/app.337c4c8f.js" as="script"><link rel="preload" href="/assets/js/2.bd4b0b66.js" as="script"><link rel="preload" href="/assets/js/25.f8381a4e.js" as="script"><link rel="prefetch" href="/assets/js/10.2b333f61.js"><link rel="prefetch" href="/assets/js/11.eae9d2a4.js"><link rel="prefetch" href="/assets/js/12.c37c32bb.js"><link rel="prefetch" href="/assets/js/13.8b3dd286.js"><link rel="prefetch" href="/assets/js/14.58c1c8a9.js"><link rel="prefetch" href="/assets/js/15.d0b637f2.js"><link rel="prefetch" href="/assets/js/16.75198b41.js"><link rel="prefetch" href="/assets/js/17.53bd62e8.js"><link rel="prefetch" href="/assets/js/18.f8deea7f.js"><link rel="prefetch" href="/assets/js/19.f781a11d.js"><link rel="prefetch" href="/assets/js/20.c64b4fe2.js"><link rel="prefetch" href="/assets/js/21.91af1b2c.js"><link rel="prefetch" href="/assets/js/22.fd6ab520.js"><link rel="prefetch" href="/assets/js/23.977f99b6.js"><link rel="prefetch" href="/assets/js/24.21388a82.js"><link rel="prefetch" href="/assets/js/26.1231d80d.js"><link rel="prefetch" href="/assets/js/27.8e54056b.js"><link rel="prefetch" href="/assets/js/28.5fc6bf9e.js"><link rel="prefetch" href="/assets/js/29.532a21f4.js"><link rel="prefetch" href="/assets/js/3.0a2fbf01.js"><link rel="prefetch" href="/assets/js/30.8f3d4117.js"><link rel="prefetch" href="/assets/js/31.f38014f9.js"><link rel="prefetch" href="/assets/js/32.58635435.js"><link rel="prefetch" href="/assets/js/33.3db53af3.js"><link rel="prefetch" href="/assets/js/34.b4c0a254.js"><link rel="prefetch" href="/assets/js/35.16a7227c.js"><link rel="prefetch" href="/assets/js/36.c7ffdf11.js"><link rel="prefetch" href="/assets/js/37.8ebe02f9.js"><link rel="prefetch" href="/assets/js/38.0abfab08.js"><link rel="prefetch" href="/assets/js/39.d0c21ca8.js"><link rel="prefetch" href="/assets/js/4.e279681c.js"><link rel="prefetch" href="/assets/js/5.0a13ab0c.js"><link rel="prefetch" href="/assets/js/6.3dd7f3b4.js"><link rel="prefetch" href="/assets/js/7.e70718e9.js"><link rel="prefetch" href="/assets/js/8.3ac2dd1d.js"><link rel="prefetch" href="/assets/js/9.8abce38c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.63332151.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">杨峥的个人博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/vue/" class="nav-link">vue</a></div><div class="nav-item"><a href="/node/" class="nav-link router-link-active">node</a></div><div class="nav-item"><a href="/react/" class="nav-link">react</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/npm.html" class="nav-link">npm</a></li><li class="dropdown-item"><!----> <a href="/tools/" class="nav-link">git</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">js</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/" class="nav-link">js基础</a></li><li class="dropdown-item"><!----> <a href="/jsg/" class="nav-link">js高级</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/vue/" class="nav-link">vue</a></div><div class="nav-item"><a href="/node/" class="nav-link router-link-active">node</a></div><div class="nav-item"><a href="/react/" class="nav-link">react</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/npm.html" class="nav-link">npm</a></li><li class="dropdown-item"><!----> <a href="/tools/" class="nav-link">git</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">js</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/" class="nav-link">js基础</a></li><li class="dropdown-item"><!----> <a href="/jsg/" class="nav-link">js高级</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/node/node基础.html" class="sidebar-link">node 基础</a></li><li><a href="/node/node增删改查.html" class="active sidebar-link">node 增删改查</a><ul class="sidebar-sub-headers"></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="node-增删改查"><a href="#node-增删改查" aria-hidden="true" class="header-anchor">#</a> node 增删改查</h1> <h3 id="一、增加数据方法："><a href="#一、增加数据方法：" aria-hidden="true" class="header-anchor">#</a> 一、增加数据方法：</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>promises<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token function-variable function">rdir</span> <span class="token operator">=</span> <span class="token parameter">filename</span> <span class="token operator">=&gt;</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//封装读取json的方法</span>
+<span class="token keyword">function</span> <span class="token function">rfile</span><span class="token punctuation">(</span><span class="token parameter">file</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//读取json文件 并处理json成为数组 返回一个promise</span>
+  <span class="token keyword">return</span> fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token function">rdir</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// rfile(&quot;goods.json&quot;).then(data =&gt; {</span>
+<span class="token comment">//     console.log(data, data instanceof Array)</span>
+<span class="token comment">// })</span>
+
+<span class="token comment">//封装写入json的方法</span>
+<span class="token keyword">function</span> <span class="token function">wfile</span><span class="token punctuation">(</span><span class="token parameter">file<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>data<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token function">rdir</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//添加</span>
+<span class="token function">rfile</span><span class="token punctuation">(</span><span class="token string">'goods.json'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> newArr <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">'草莓'</span><span class="token punctuation">,</span>
+      price<span class="token punctuation">:</span> <span class="token number">24</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">'西瓜'</span><span class="token punctuation">,</span>
+      price<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> ns <span class="token operator">=</span> newArr<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> s <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token parameter">it</span> <span class="token operator">=&gt;</span> it<span class="token punctuation">.</span>name <span class="token operator">==</span> item<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token string">'------'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> item<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ns <span class="token operator">=</span> ns<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    item<span class="token punctuation">.</span>id <span class="token operator">=</span> data<span class="token punctuation">[</span>data<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>id <span class="token operator">+</span> index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> item<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//合并数组</span>
+  <span class="token keyword">let</span> lastData <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>data<span class="token punctuation">,</span> <span class="token operator">...</span>ns<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token function">wfile</span><span class="token punctuation">(</span><span class="token string">'goods.json'</span><span class="token punctuation">,</span> lastData<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'写入成功'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="初始数据："><a href="#初始数据：" aria-hidden="true" class="header-anchor">#</a> 初始数据：</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'苹果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'香蕉'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'榴莲'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'芒果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="增加后数据："><a href="#增加后数据：" aria-hidden="true" class="header-anchor">#</a> 增加后数据：</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'苹果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'香蕉'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'榴莲'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'芒果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'草莓'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">24</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="二、删除数据方法："><a href="#二、删除数据方法：" aria-hidden="true" class="header-anchor">#</a> 二、删除数据方法：</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>promises<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token function-variable function">rdir</span> <span class="token operator">=</span> <span class="token parameter">filename</span> <span class="token operator">=&gt;</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//封装读取json的方法</span>
+<span class="token keyword">function</span> <span class="token function">rfile</span><span class="token punctuation">(</span><span class="token parameter">file</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//读取json文件 并处理json成为数组 返回一个promise</span>
+  <span class="token keyword">return</span> fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token function">rdir</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// rfile(&quot;goods.json&quot;).then(data =&gt; {</span>
+<span class="token comment">//     console.log(data, data instanceof Array)</span>
+<span class="token comment">// })</span>
+
+<span class="token comment">//封装写入json的方法</span>
+<span class="token keyword">function</span> <span class="token function">wfile</span><span class="token punctuation">(</span><span class="token parameter">file<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>data<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token function">rdir</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//删除</span>
+<span class="token function">rfile</span><span class="token punctuation">(</span><span class="token string">'goods.json'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> nw <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> item<span class="token punctuation">.</span>id <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">wfile</span><span class="token punctuation">(</span><span class="token string">'goods.json'</span><span class="token punctuation">,</span> nw<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'删除成功'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="初始数据：-2"><a href="#初始数据：-2" aria-hidden="true" class="header-anchor">#</a> 初始数据：</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'苹果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'香蕉'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'榴莲'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'芒果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="删除后数据："><a href="#删除后数据：" aria-hidden="true" class="header-anchor">#</a> 删除后数据：</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'苹果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'香蕉'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'榴莲'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="三、修改数据方法："><a href="#三、修改数据方法：" aria-hidden="true" class="header-anchor">#</a> 三、修改数据方法：</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>promises<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token function-variable function">resolve</span> <span class="token operator">=</span> <span class="token parameter">filename</span> <span class="token operator">=&gt;</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//1.读取文件中的数据</span>
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'goods.json'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">//2.把json数据转化成数组形式</span>
+  <span class="token keyword">let</span> goodsArr <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">//3.操作数组</span>
+  <span class="token keyword">let</span> newArr <span class="token operator">=</span> goodsArr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>id <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      item<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> item<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">//4.把新数组写入文件</span>
+  fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'goods.json'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>newArr<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="初始数据：-3"><a href="#初始数据：-3" aria-hidden="true" class="header-anchor">#</a> 初始数据：</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'苹果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'香蕉'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'榴莲'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'芒果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="改变后数据："><a href="#改变后数据：" aria-hidden="true" class="header-anchor">#</a> 改变后数据：</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'苹果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'香蕉'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'榴莲'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'芒果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="四、查找数据方法："><a href="#四、查找数据方法：" aria-hidden="true" class="header-anchor">#</a> 四、查找数据方法：</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>promises<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token function-variable function">rdir</span> <span class="token operator">=</span> <span class="token parameter">filename</span> <span class="token operator">=&gt;</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//封装读取json的方法</span>
+<span class="token keyword">function</span> <span class="token function">rfile</span><span class="token punctuation">(</span><span class="token parameter">file</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//读取json文件 并处理json成为数组 返回一个promise</span>
+  <span class="token keyword">return</span> fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token function">rdir</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// rfile(&quot;goods.json&quot;).then(data =&gt; {</span>
+<span class="token comment">//     console.log(data, data instanceof Array)</span>
+<span class="token comment">// })</span>
+
+<span class="token comment">//封装写入json的方法</span>
+<span class="token keyword">function</span> <span class="token function">wfile</span><span class="token punctuation">(</span><span class="token parameter">file<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>data<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token function">rdir</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//查找</span>
+<span class="token function">rfile</span><span class="token punctuation">(</span><span class="token string">'goods.json'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> nw <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> item<span class="token punctuation">.</span>id <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="初始数据：-4"><a href="#初始数据：-4" aria-hidden="true" class="header-anchor">#</a> 初始数据：</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'苹果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'香蕉'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'榴莲'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'芒果'</span><span class="token punctuation">,</span>
+    price<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="查找数据："><a href="#查找数据：" aria-hidden="true" class="header-anchor">#</a> 查找数据：</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>Running<span class="token punctuation">]</span> node <span class="token string">&quot;d:\github\nodelesson\fs-xg.js&quot;</span>
+<span class="token punctuation">(</span>node<span class="token punctuation">:</span><span class="token number">20036</span><span class="token punctuation">)</span> ExperimentalWarning<span class="token punctuation">:</span> The fs<span class="token punctuation">.</span>promises <span class="token constant">API</span> is experimental
+
+<span class="token punctuation">[</span>Done<span class="token punctuation">]</span> exited <span class="token keyword">with</span> code<span class="token operator">=</span><span class="token number">0</span> <span class="token keyword">in</span> <span class="token number">0.187</span> seconds
+
+<span class="token punctuation">[</span>Running<span class="token punctuation">]</span> node <span class="token string">&quot;d:\github\nodelesson\fs-cz.js&quot;</span>
+<span class="token punctuation">(</span>node<span class="token punctuation">:</span><span class="token number">10024</span><span class="token punctuation">)</span> ExperimentalWarning<span class="token punctuation">:</span> The fs<span class="token punctuation">.</span>promises <span class="token constant">API</span> is experimental
+
+苹果
+<span class="token number">20</span>
+
+<span class="token punctuation">[</span>Done<span class="token punctuation">]</span> exited <span class="token keyword">with</span> code<span class="token operator">=</span><span class="token number">0</span> <span class="token keyword">in</span> <span class="token number">0.209</span> seconds
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/node/node基础.html" class="prev">
+          node 基础
+        </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.337c4c8f.js" defer></script><script src="/assets/js/2.bd4b0b66.js" defer></script><script src="/assets/js/25.f8381a4e.js" defer></script>
+  </body>
+</html>
